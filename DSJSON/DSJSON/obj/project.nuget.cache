@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rC/+/3sjBGI=",
+  "success": true,
+  "projectFilePath": "D:\\DSJSON\\DSJSON\\DSJSON.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vaa\\.nuget\\packages\\zxing.net\\0.16.11\\zxing.net.0.16.11.nupkg.sha512"
+  ],
+  "logs": []
+}

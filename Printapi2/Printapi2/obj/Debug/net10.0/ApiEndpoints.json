@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "Printapi2.Controllers.PrintController",
+    "Method": "Print",
+    "RelativePath": "api/print",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "json",
+        "Type": "System.Text.Json.JsonElement",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
