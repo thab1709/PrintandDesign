@@ -19,6 +19,7 @@ jobs:
           OPENAI_API_BASE: https://rjvke3q.9router.com/v1
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CONFIG__AI__MODEL: fast-model
+          CONFIG__AI__FALLBACK_MODELS: fast-model
           github_action_config.auto_review: "true"
           github_action_config.auto_describe: "true"
           github_action_config.auto_improve: "true"
