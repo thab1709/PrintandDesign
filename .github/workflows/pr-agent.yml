@@ -16,7 +16,9 @@ jobs:
         uses: Codium-ai/pr-agent@main
         env:
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          OPENAI_API_BASE: https://rjvke3q.9router.com/v1
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONFIG__AI__MODEL: fast-model
           github_action_config.auto_review: "true"
           github_action_config.auto_describe: "true"
           github_action_config.auto_improve: "true"
