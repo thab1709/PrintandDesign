@@ -1,4 +1,5 @@
 name: PR Agent
+
 on:
   pull_request:
     types: [opened, synchronize]
@@ -11,16 +12,20 @@ jobs:
     permissions:
       pull-requests: write
       contents: read
+
     steps:
       - name: PR Agent
         uses: Codium-ai/pr-agent@main
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_BASE_URL: https://api.anthropic.com/v1
-          CONFIG__MODEL: claude-haiku-4-5-20251001
-          CONFIG__FALLBACK_MODELS: claude-haiku-4-5-20251001
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # Gemini API Key
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+          # Chọn provider/model Gemini
+          CONFIG__MODEL: gemini/gemini-2.5-flash
+          CONFIG__FALLBACK_MODELS: gemini/gemini-2.5-flash
+
           github_action_config.auto_review: "true"
           github_action_config.auto_describe: "true"
           github_action_config.auto_improve: "true"
