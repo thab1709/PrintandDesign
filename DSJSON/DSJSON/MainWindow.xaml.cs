@@ -2233,5 +2233,27 @@ namespace DSJSON
             DesignCanvas.Children.Remove(selectionBox);
             selectionBox = null;
         }
+        // TEST PR-AGENT REVIEW
+        void ExportPng_Click(object sender, RoutedEventArgs e)
+        {
+            var bmp = RenderCanvas();
+
+            SaveFileDialog dlg = new SaveFileDialog
+            {
+                FileName = "design.png",
+                Filter = "PNG Image|*.png"
+            };
+
+            if (dlg.ShowDialog() == true)
+            {
+                PngBitmapEncoder encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(bmp));
+
+                using FileStream fs = new FileStream(dlg.FileName, FileMode.Create);
+                encoder.Save(fs);
+
+                MessageBox.Show("Exported: " + dlg.FileName);
+            }
+        }
     }
 }
