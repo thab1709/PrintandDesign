@@ -13,9 +13,10 @@ public class PrintService
 
     // Designer dùng 96dpi, máy in dùng DPI thực
     // Font dùng GraphicsUnit.Point nên GDI+ tự scale
-    // Width/Height từ designer (96dpi) cần convert sang print DPI
+    // Width/Height từ designer (96dpi) cần convert sang print DPI// Width/Height từ designer (96dpi) cần convert sang print DPI
     float printDpiX = 96f;
     float printDpiY = 96f;
+    float printDpiZ = 96f;
 
     float ToPx(double designerPx, float dpi) =>
         (float)(designerPx / 96.0 * dpi);
