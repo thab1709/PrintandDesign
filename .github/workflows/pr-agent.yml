@@ -15,10 +15,11 @@ jobs:
       - name: PR Agent
         uses: Codium-ai/pr-agent@main
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          CONFIG__AI__PROVIDER: anthropic
-          CONFIG__AI__MODEL: claude-haiku-4-5-20251001
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CONFIG__MODEL: gemini/gemini-2.5-flash
+          CONFIG__FALLBACK_MODELS: gemini/gemini-2.5-flash
+          CONFIG__RESPONSE_LANGUAGE: vi-VN
           github_action_config.auto_review: "true"
           github_action_config.auto_describe: "true"
           github_action_config.auto_improve: "true"
