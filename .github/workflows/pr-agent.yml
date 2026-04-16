@@ -1,5 +1,4 @@
 name: PR Agent
-
 on:
   pull_request:
     types: [opened, synchronize]
@@ -9,26 +8,17 @@ on:
 jobs:
   pr_agent_job:
     runs-on: ubuntu-latest
-
     permissions:
       pull-requests: write
       contents: read
-
     steps:
       - name: PR Agent
         uses: Codium-ai/pr-agent@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          OPENAI_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CONFIG__MODEL: gemini/gemini-2.5-flash
           CONFIG__FALLBACK_MODELS: gemini/gemini-2.5-flash
-
-          LITELLM_PROVIDER: gemini
-
           github_action_config.auto_review: "true"
           github_action_config.auto_describe: "true"
           github_action_config.auto_improve: "true"
-          github_action_config.review_on_push: "true"
